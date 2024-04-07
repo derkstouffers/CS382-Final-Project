@@ -1,38 +1,3 @@
 :root{
-    color: black;
-    background: #8CF5AA;
-    font-family: "Roboto Condensed";
-    font-weight: 400;
-}
-
-#landing_layer{
-    width: 100%;
-    height: 100%;
-    position:relative;
-}
-
-#left-main-text{
-    width: 950px; 
-    height: 48px; 
-    left: 0px; 
-    top: 398px; 
-    position: absolute; 
-    text-align: center; 
-    color: black; 
-    font-size: 64px; 
-    font-weight: 400; 
-    word-wrap: break-word
-}
-
-#left-main-sub{
-    width: 957px; 
-    height: 68px; 
-    left: -7px; 
-    top: 487px; 
-    position: absolute; 
-    text-align: center; 
-    color: black; 
-    font-size: 32px; 
-    font-weight: 400; 
-    word-wrap: break-word;
+    --mainBgColor: #8CF5AA;
 }
