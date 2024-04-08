@@ -1,0 +1,66 @@
+:root{
+    --mainBgColor: #8CF5AA;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: var(--mainBgColor);
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+.left-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    .section-text{
+        font-size: 48px;
+    }
+
+    .left-section-sub{
+        text-align: center;
+        font-size: 24px;
+    }
+}
+
+.right-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+
+    .section-text{
+        font-size: 48px;
+    }
+    
+    .login{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        #register{
+            margin-left:10px;
+        }
+        /* override the button color */
+        .btn-login, .btn-login:hover, .btn-login:active, .btn-login:visited, .btn-login:focus {
+            background-color: rgba(13, 167, 154, 0.5);
+            color: #000;
+        }
+        .btn-register, .btn-register:hover, .btn-register:active, .btn-register:visited, .btn-register:focus {
+            background-color: #D9D9D9;
+            color: #000;
+        }
+    }
+    
+}
+
+.nav-item{
+    margin-top: 10px;
+    font-size: 18px;
+    a{
+        color: #000;
+    }
+}
