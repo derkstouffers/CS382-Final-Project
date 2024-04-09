@@ -6,9 +6,25 @@
 body{
     margin: 0;
     padding: 0;
-    background: var(--mainBgColor);
+    /* background: var(--mainBgColor); */
     font-family: "Roboto";
     font-weight: 400;
+}
+
+.background{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/pexels-lukas-296115.jpg');
+    background-size: cover;
+    filter: blur(8px);
+}
+
+.section-text{
+    font-size: 48px;
+    color: white;
 }
 
 .left-section{
@@ -16,10 +32,6 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
-
-    .section-text{
-        font-size: 48px;
-    }
 
     .left-section-sub{
         text-align: center;
@@ -32,10 +44,6 @@ body{
     align-items: center;
     justify-content: center;
     height: 90vh;
-
-    .section-text{
-        font-size: 48px;
-    }
     
     .login{
         display:flex;
@@ -46,7 +54,7 @@ body{
         }
         /* override the button color */
         .btn-login, .btn-login:hover, .btn-login:active, .btn-login:visited, .btn-login:focus {
-            background-color: rgba(13, 167, 154, 0.5);
+            background-color: rgb(0, 255, 157);
             color: #000;
         }
         .btn-register, .btn-register:hover, .btn-register:active, .btn-register:visited, .btn-register:focus {
@@ -54,12 +62,19 @@ body{
             color: #000;
         }
     }
-    
-}
+    .section-text{
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        border: 1px solid #f1f1f1;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+    }
+}   
 
 .nav-item{
     margin-top: 10px;
     font-size: 18px;
+    font-weight: 500;
     a{
         color: #000;
     }
