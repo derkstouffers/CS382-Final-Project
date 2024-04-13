@@ -8,7 +8,7 @@ let userSchema = new mongoose.Schema({
     password: String
 });
 
-// Provides all objects from videoGame database
+// Provides all objects from user database
 userSchema.statics.listAllVideoGames = function() {
     return this.find({});
 };
