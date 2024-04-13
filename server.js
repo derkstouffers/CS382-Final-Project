@@ -25,6 +25,9 @@ app.get('/', (req, res) => {
     res.sendFile(join(__dirname, '/index.html'))
 });
 
+//Import routes
+const user = require("./routes/user");
+
 // localhost:3000
 server.listen(PORT, () => {
     console.log('server running at localhost:' + PORT);
