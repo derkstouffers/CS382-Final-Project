@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 //Import routes
-const user = require("./routes/user");
+const user = require('./src/routes/user.js');
 
 // localhost:3000
 server.listen(PORT, () => {
