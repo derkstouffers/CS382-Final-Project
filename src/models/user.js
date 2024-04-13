@@ -1,19 +1,20 @@
 var mongoose = require("mongoose");
 
-let userSchema = new mongoose.Schema({
-    firstName: String,
-    lastName: String,
-    userName: String,
-    email: String,
-    password: String
+const userSchema = new mongoose.Schema({
+    firstName: {String, required: true },
+    lastName: {String, required: true },
+    userName: {String, required: true },
+    email: {String, required: true },
+    password: {String, required: true },
+    settings: { type: Schema.Types.ObjectId, ref: 'settings'}
 });
 
 // Provides all objects from user database
-userSchema.statics.listAllVideoGames = function() {
+userSchema.statics.listAllUsers = function() {
     return this.find({});
 };
 
-let user = mongoose.model('user', userSchema);
+const user = mongoose.model('user', userSchema);
 
 module.exports = user;
 
