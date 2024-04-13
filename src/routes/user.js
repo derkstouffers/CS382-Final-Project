@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //Import user schema
-const user = require('../model/user');
+const user = require('../models/user.js');
 
 //user login api
 router.post('/login', (req, res) => {
