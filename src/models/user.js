@@ -1,11 +1,11 @@
 var mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    firstName: {String, required: true },
-    lastName: {String, required: true },
-    userName: {String, required: true },
-    email: {String, required: true },
-    password: {String, required: true },
+    firstName: String,
+    lastName: String,
+    userName: String,
+    email: String,
+    password: String,
     settings: { type: Schema.Types.ObjectId, ref: 'settings'}
 });
 
