@@ -1,0 +1,29 @@
+/* custom variables */
+:root{
+    /* colors */
+    --accent-color: #9EE493;
+    --light-color: whitesmoke;
+    --dark-color: #121212;
+
+    /* card shadow */
+    --shadow: 0.25em 0.25em 0.75em rgba(0,0,0,0.5), 0.125em 0.125em 0.25em rgba(0,0,0,0.25);
+
+    /* fonts/typography */
+}
+
+/* general stylings */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    /* default color scheme */
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
