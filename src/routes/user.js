@@ -69,7 +69,7 @@ router.post('/register', (req, res, next) => {
     // Create settings document for the user
     const newSettings = new settings({
         // Link the settings to the user
-        userID: user._id, 
+        userID: newUser._id, 
     });
 
     newSettings.save((err, settings) => {
