@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User List</title>
+</head>
+<body>
+<h1>List of Users:</h1>
+<ul>
+    <% for(user of users) { %>
+        <li>
+            <%= user.firstName + " " + user.lastName + " - Username: " + user.userName + ", Email: " + user.email + ", Password: " + user.password + ", " %> 
+        </li>
+    <% } %>
+</ul>
+</body>
+</html>
