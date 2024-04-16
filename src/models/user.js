@@ -1,8 +1,9 @@
 var mongoose = require("mongoose");
 var crypto = require("crypto");
 const { type } = require("os");
+const Schema = mongoose.Schema;
 
-let userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     firstName: {
         type : String,
         required : true
@@ -21,11 +22,8 @@ let userSchema = new mongoose.Schema({
         required : true
     },
     hash : String,
-    salt : String //adds random data to password
-    // password: {
-    //     type : String,
-    //     required : true
-    // }
+    salt : String, //adds random data to password
+    settings: { type: Schema.Types.ObjectId, ref: 'settings'}
 });
 
 userSchema.methods.setPass = function(password) {
