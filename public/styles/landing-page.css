@@ -45,8 +45,8 @@ body{
     justify-content: center;
     height: 90vh;
     
-    .login{
-        display:flex;
+    .login-options{
+        display: flex;
         align-items: center;
         justify-content: center;
         #register{
@@ -62,12 +62,17 @@ body{
             color: #000;
         }
     }
+
     .section-text{
         background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
         border: 1px solid #f1f1f1;
         width: 80%;
         padding: 20px;
         text-align: center;
+        .login-screen{
+            display: none;
+            animation: login-animated 0.3s;
+        }
     }
 }   
 
@@ -78,4 +83,9 @@ body{
     a{
         color: #000;
     }
+}
+
+@keyframes login-animated {
+    from {left:0px;}
+    to {left: 100px;}
 }
