@@ -14,15 +14,20 @@ main().then(function() {
     console.log("Mongoose connected!");
 }).catch(err => console.log(err));
 
-// ADD THE `const userModel = require(path_to_user_model)
+const userModel = require('./src/models/user.js');
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded());
 app.use(express.json());
 
 app.use(express.static('public/'));
-app.get('/', (req, res) => {
-    res.sendFile(join(__dirname, '/index.html'))
+
+app.post('/user', function(req, res){
+    let newUser = new userModel(req.body.user);
+    console.log("User: " + JSON.stringify(req.body.user));
+    newUser.save().then(function(){
+        res.send("Added a new user to the database");
+    })
 });
 
 //Import routes
