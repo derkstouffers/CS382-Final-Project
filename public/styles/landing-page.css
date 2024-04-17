@@ -84,8 +84,3 @@ body{
         color: #000;
     }
 }
-
-@keyframes login-animated {
-    from {left:0px;}
-    to {left: 100px;}
-}
