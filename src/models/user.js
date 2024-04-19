@@ -1,5 +1,5 @@
-var mongoose = require("mongoose");
-var crypto = require("crypto");
+const mongoose = require("mongoose");
+const crypto = require("crypto");
 const { type } = require("os");
 const Schema = mongoose.Schema;
 
