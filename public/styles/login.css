@@ -29,7 +29,7 @@ body{
 }
 
 /* login */
-.login-card{
+.login-card .registration-card{
     border-radius: 25px;
     box-shadow: var(--shadow);
 }
