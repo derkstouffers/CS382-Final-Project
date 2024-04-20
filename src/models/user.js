@@ -49,6 +49,9 @@ userSchema.methods.validPass = function(password) {
     return this.hash === hash;
 };
 
+
+
+
 // Provides all objects from user database
 userSchema.statics.listAllUsers = function() {
     return this.find({});

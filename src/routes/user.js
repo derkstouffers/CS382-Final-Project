@@ -10,16 +10,24 @@ const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$/;
 
 
 //user login api
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     //find user
-    if (user === null) {
+    const { email, password } = req.body.user;
+    console.log("email found in body is: " + email);
+
+    const foundUser = await user.findOne({email});
+    
+
+    if (foundUser === undefined || foundUser === null) {
         return res.status(400).send({
             message : 'User Not Found.'
         });
     } //End if
 
+    
     else {
-        if (user.validPass(req.body.password)) {
+        console.log("User that was found: " + foundUser._id);
+        if (foundUser.validPass(password)) {
             return res.status(201).send({
                 message : 'User Logged In.'
             });

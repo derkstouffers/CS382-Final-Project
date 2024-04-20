@@ -30,13 +30,13 @@
             <div class="card login-card mx-sm-5 px-sm-3">
                 <div class="card-title py-sm-3">Finance & Stonks</div>
                 <div class="card-body pt-0 mt-0">
-                    <form action="">
+                    <form action="/user/login" method="post">
                         <div class="form-group">
-                            <input type="email" class="form-control form-control-lg" id="email" placeholder="Email">
+                            <input type="email" class="form-control form-control-lg" id="email" placeholder="Email" name="user[email]">
                         </div>
 
                         <div class="form-group">
-                            <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+                            <input type="password" class="form-control form-control-lg" id="password" placeholder="Password" name="user[password]">
                         </div>
 
                         <div class="row">
