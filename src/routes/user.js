@@ -52,20 +52,7 @@ router.post('/register', (req, res, next) => {
         email,
         password,
         confirmedPassword
-        
-        //initialize newUser with request data
-        // firstName: req.body.user.firstName,
-
-        // lastName: req.body.user.lastName,
-
-        // userName: req.body.user.userName,
-
-        // email: req.body.user.email,
-
-        // password: req.body.user.password
     });
-
-    console.log("Confirmed Password: ", confirmedPassword);
 
     //call setPass function to hash password
     newUser.setPass(password);
