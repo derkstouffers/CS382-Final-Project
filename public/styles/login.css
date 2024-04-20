@@ -28,19 +28,27 @@ body{
     background-size: cover;
 }
 
-/* login */
-.login-card{
-    border-radius: 25px;
+/* cards */
+.login-card, .signup-card{
     box-shadow: var(--shadow);
+    height: 65vh;
 }
 
+/* login */
 .login-card .card-title{
+    font-size: 84px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* sign up */
+.signup-card .signup-title{
     font-size: 48px;
     font-weight: bold;
     text-align: center;
 }
 
-/* login buttons */
+/* buttons */
 .btn-login{
     background-color: var(--accent-color);
 }
@@ -49,5 +57,3 @@ body{
     background-color: lightgray;
     color: var(--dark-color);
 }
-
-/* signup */

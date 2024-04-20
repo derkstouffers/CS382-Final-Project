@@ -1,0 +1,19 @@
+@import url('styles.css');
+
+body{
+    height: 100vh;
+
+    /* default color scheme */
+    color: var(--dark-color);
+    background-color: var(--light-color);
+
+    /* font */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.nav{
+    align-items: center;
+    justify-content: center;
+    /* custom font size */
+}
