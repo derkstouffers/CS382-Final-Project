@@ -32,6 +32,7 @@ app.post('/user', function(req, res){
 
 //Import routes
 const user = require('./src/routes/user.js');
+app.use('/user', user);
 
 // localhost:3000
 server.listen(PORT, () => {
