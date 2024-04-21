@@ -1,0 +1,12 @@
+@import url(landing-page.css);
+@import url(styles.css);
+
+.right-section {
+    color: white;
+    .section-text{
+        font-size: medium;
+        background-color: rgba(0, 0, 0, 0.8) !important; /* Black w/opacity/see-through */
+        text-align: justify;
+        text-justify: inter-word;
+    }
+}
