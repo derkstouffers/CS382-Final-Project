@@ -13,18 +13,18 @@ const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$/;
 router.post('/login', async (req, res) => {
     //find user
     const { email, password } = req.body.user;
-    console.log("email found in body is: " + email);
 
     const foundUser = await user.findOne({email});
     
-
+    // check if the user exists
+    // TODO: figure out a way to have a pop-up instead of displaying the server message.
+    // fetch or AJAX probably?
     if (foundUser === undefined || foundUser === null) {
         return res.status(400).send({
             message : 'User Not Found.'
         });
     } //End if
 
-    
     else {
         console.log("User that was found: " + foundUser._id);
         if (foundUser.validPass(password)) {
