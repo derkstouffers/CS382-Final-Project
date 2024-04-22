@@ -1,14 +1,19 @@
 /* custom variables */
-:root{
+:root {
     /* colors */
     --accent-color: #9EE493;
-    --light-color: whitesmoke;
+    --light-color: #F5F5F5;
     --dark-color: #121212;
 
     /* card shadow */
     --shadow: 0.25em 0.25em 0.75em rgba(0,0,0,0.5), 0.125em 0.125em 0.25em rgba(0,0,0,0.25);
 
     /* fonts/typography */
+    --fs-title: ;
+    --fs-subtitle: ;
+    --fs-text: ;
+    --fw-bold: ;
+    --fw-reg: ;
 }
 
 /* general stylings */
@@ -18,33 +23,72 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
-
 body {
+    height: 100vh;
+
     /* default color scheme */
     color: var(--dark-color);
     background-color: var(--light-color);
+
+    /* font */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* general settings */
-.background{
+.background {
+    background-image: url('../images/pexels-lukas-296115.jpg');
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
     height: 100%;
-    background-image: url('../images/pexels-lukas-296115.jpg');
+    width: 100%;
+    filter: blur(1rem);
     background-size: cover;
-    filter: blur(8px);
 }
 
-.nav-item{
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    a{
-        color: #000;
-    }
+a {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+.card {
+    box-shadow: var(--shadow);
+    border-radius: 2.5rem;
+}
+
+/* typography */
+.section-text.section-title {
+    font-size: 84px;
+    font-weight: bolder;
+}
+
+.section-text.section-subtitle {
+    font-size: 48px;
+}
+
+/* buttons */
+.btn-login .btn-signup {
+    font-weight: bold;
+}
+
+.btn-login {
+    background-color: var(--accent-color);
+}
+
+.btn-login:hover {
+    background-color: #95D68A;
+}
+
+.btn-signup {
+    background-color: lightgray;
+    color: var(--dark-color);
+}
+
+.btn-signup:hover {
+    background-color: #b9b9b9;
 }
