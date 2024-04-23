@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // landing page stuff
+    // sign up and register stuff
     const login_btn = document.getElementById('login');
     const login_form = document.getElementById('login-form');
     const welcome_page = document.getElementById('welcome-page');
