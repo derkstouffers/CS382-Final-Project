@@ -22,15 +22,6 @@ app.use(express.json());
 
 app.use(express.static('public/'));
 
-// app.post('/user', function(req, res){
-//     let newUser = new userModel(req.body.user);
-//     console.log("User: " + JSON.stringify(req.body.user));
-
-//     newUser.save().then(function(){
-//         res.send("Added a new user to the database");
-//     });
-// });
-
 //Import routes
 const user = require('./src/routes/user.js');
 app.use('/user', user);

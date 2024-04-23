@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+
 //Import user schema
 const user = require('../models/user.js');
 const settings = require("../models/settings.js");
@@ -17,8 +18,7 @@ router.post('/login', async (req, res) => {
     const foundUser = await user.findOne({email});
     
     // check if the user exists
-    // TODO: figure out a way to have a pop-up instead of displaying the server message.
-    // fetch or AJAX probably?
+    // TODO: use res.redirect("")
     if (foundUser === undefined || foundUser === null) {
         return res.status(400).send({
             message : 'User Not Found.'
@@ -28,9 +28,9 @@ router.post('/login', async (req, res) => {
     else {
         console.log("User that was found: " + foundUser._id);
         if (foundUser.validPass(password)) {
-            return res.status(201).send({
-                message : 'User Logged In.'
-            });
+            console.log("Login successful; redirected to dashboard.html");
+            res.redirect("/pages/dashboard.html");
+            return;
         } //end inner if
 
         else {
@@ -42,10 +42,20 @@ router.post('/login', async (req, res) => {
 });
 
 //user signup api
-router.post('/register', (req, res, next) => {
+router.post('/register', async (req, res, next) => {
 
     //pasword and confirmedPassword have to be declared before check
     const {firstName, lastName, userName, email, password, confirmedPassword} = req.body.user;
+    const userEmailFound = await user.findOne({email}); //for email check
+    console.log("Found email: " + userEmailFound);
+
+    // check database for email; if email is found, DO NOT create account
+    if(userEmailFound != null){
+        console.log("This email is already in use. Use a different email.")
+        return res.status(400).send({
+            message: 'Email already in use. Use a different email.',
+        });
+    }
 
     //Checks if password is the same as confirm password
     if (password !== confirmedPassword) {
@@ -79,9 +89,9 @@ router.post('/register', (req, res, next) => {
     //save the new user to the DB
     newUser.save()
         .then(settings => {
-            res.status(201).send({
-                message : "New user added successfully"
-            });
+            console.log("Registration successful; redirected to dashboard.html");
+            res.redirect("/pages/dashboard.html");
+            return;
         })
         .catch(err => {
             console.error(err);
