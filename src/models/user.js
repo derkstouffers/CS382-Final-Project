@@ -21,16 +21,6 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-
-    password: {
-        type : String,
-        required : true
-    },
-    
-    confirmedPassword: {
-        type: String,
-        required: true
-    },
     hash : String,
     salt : String, //adds random data to password
     settings: { type: Schema.Types.ObjectId, ref: 'settings'}
