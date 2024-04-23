@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
+
 //Import user schema
 const user = require('../models/user.js');
 const settings = require("../models/settings.js");
