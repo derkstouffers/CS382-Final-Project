@@ -1,2 +1,14 @@
-@import url(styles.css);
-@import url(landing-page.css);
+@import url('styles.css');
+
+nav {
+    /* from https://cssgradient.io/ */
+    background: var(--accent-color);
+    background: linear-gradient(45deg, var(--accent-color) 20%, #009E60 75%, #157F1F 100%);
+    
+    border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+}
+
+nav li.nav-item {
+    font-size: 24px;
+}

@@ -13,6 +13,7 @@
 
     <!-- Styling Links -->
     <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/landing-page.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,27 +28,24 @@
 <body>
     <div class="container-fluid">
         <!-- background image -->
-        <div class="background"></div>
+        <!-- <div class="background"></div> -->
 
         <!-- signup card -->
         <div class="card signup-card mx-sm-5 px-sm-3">
-            <div class="row py-sm-3">
+            <div class="row p-sm-4">
                 <!-- About Section -->
                 <div class="col border-right border-dark">
-                    <!-- <div class="card-title signup-title text-center">Finance & Stonks</div> -->
-
-                    <!-- add about text here, idk what to put -->
                     <!-- ANOTHA ONE -->
                     <div class="card-body py-0 text-center">
-                        <p class="section-text section-subtitle" style="font-weight: bold;">We're Stonkin' to meet you!</h2>
-                        <p>
+                        <p class="section-text section-subtitle font-weight-bold">We're <span style="color: var(--accent-color);">$</span>tonkin' to meet you!</h2>
+                        <p class="section-text section-body">
                             Wraith talk. I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth. Celebrate success right, the only way, apple. 
                             Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I’m never giving up, I’m just getting started. 
                             Hammock talk come soon. Look at the sunset, life is amazing, life is beautiful, life is what you make it. Stay focused. 
                             The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. Find peace, life is like a water fall, you’ve gotta flow.
                         </p>
 
-                        <p>
+                        <p class="section-text section-body">
                             How's business? Boomin. Let’s see what Chef Dee got that they don’t want us to eat. You smart, you loyal, you a genius. 
                             They key is to have every key, the key to open every door. I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth. 
                             Always remember in the jungle there’s a lot of they in there, after you overcome they, you will make it to paradise. 
@@ -57,7 +55,7 @@
                 </div>
 
                 <!-- signup form -->
-                <div class="col pt-3 px-sm-5">
+                <div class="col mt-4">
                     <div class="card-body">
                         <form action="/user/register" method="post">
                             <!-- Names -->
@@ -96,8 +94,8 @@
                             
                             <button type="submit" class="btn btn-block btn-lg btn-signup mt-4">Create Account</button>
 
-                            <div class="footer text-muted my-sm-2">
-                                <a href="./login.html">Already have an account?</a>
+                            <div class="footer text-muted mt-4">
+                                <a class="already" href="./login.html">Already have an account?</a>
                             </div>
                         </form>
                     </div> 

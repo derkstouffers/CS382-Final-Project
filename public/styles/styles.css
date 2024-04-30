@@ -9,11 +9,11 @@
     --shadow: 0.25em 0.25em 0.75em rgba(0,0,0,0.5), 0.125em 0.125em 0.25em rgba(0,0,0,0.25);
 
     /* fonts/typography */
-    --fs-title: ;
-    --fs-subtitle: ;
-    --fs-text: ;
-    --fw-bold: ;
-    --fw-reg: ;
+    --fs-title: 2.75rem;
+    --fs-subtitle: 1.75rem;
+    --fs-body: 1rem;
+    --fw-bold: 950;
+    --fw-reg: 400;
 }
 
 /* general stylings */
@@ -32,11 +32,8 @@ body {
 
     /* font */
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-reg);
 }
 
 /* general settings */
@@ -63,17 +60,23 @@ a {
 
 /* typography */
 .section-text.section-title {
-    font-size: 84px;
-    font-weight: bolder;
+    font-size: var(--fs-title);
+    font-weight: var(--fw-bold);
 }
 
 .section-text.section-subtitle {
-    font-size: 48px;
+    font-size: var(--fs-subtitle);
+    font-weight: var(--fw-reg);
+}
+
+.section-text.section-body {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-reg);
 }
 
 /* buttons */
 .btn-login .btn-signup {
-    font-weight: bold;
+    font-weight: var(--fw-bold);
 }
 
 .btn-login {
@@ -81,14 +84,14 @@ a {
 }
 
 .btn-login:hover {
-    background-color: #95D68A;
+    background-color: #81D88A;
 }
 
 .btn-signup {
-    background-color: lightgray;
+    background-color: #DEDEDE;
     color: var(--dark-color);
 }
 
 .btn-signup:hover {
-    background-color: #b9b9b9;
+    background-color: #D3D3D3;
 }

@@ -1,5 +1,4 @@
-@import url(landing-page.css);
-@import url(styles.css);
+@import url('styles.css');
 
 .right-section {
     color: white;
