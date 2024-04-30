@@ -26,6 +26,8 @@ app.use(express.static('public/'));
 const user = require('./src/routes/user.js');
 app.use('/user', user);
 
+
+
 // localhost:3000
 server.listen(PORT, () => {
     console.log('server running at localhost:' + PORT);
