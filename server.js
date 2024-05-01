@@ -30,6 +30,8 @@ const settings = require('./src/routes/settings.js')
 app.use('/user', user);
 app.use('/settings', settings);
 
+
+
 // localhost:3000
 server.listen(PORT, () => {
     console.log('server running at localhost:' + PORT);
