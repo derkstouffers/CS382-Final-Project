@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
     // check if the user exists
     if (!foundUser) {
         console.log("User not found, redirecting to login.");
-        res.redirect("/pages/login.html");
+        res.redirect("/pages/login.html?error=userNotFound");
         return;
     }
 
@@ -29,9 +29,9 @@ router.post('/login', async (req, res) => {
         res.redirect("/pages/dashboard.html");
         return;
     } else {
-        // pass word is wrong 
+        // password is wrong 
         console.log("Wrong password, redirecting to login.");
-        res.redirect("/pages/login.html");
+        res.redirect("/pages/login.html?error=wrongPassword");
         return;
     }
 });
