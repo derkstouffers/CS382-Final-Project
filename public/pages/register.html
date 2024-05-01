@@ -59,6 +59,7 @@
                     <div class="card-body">
                         <form action="/user/register" method="post">
                             <!-- Names -->
+                            <div id="textplaceholder"></div>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group pb-1">
@@ -76,22 +77,26 @@
                             <div class="form-group pb-1">
                                 <input type="email" class="form-control form-control-lg" id="email" placeholder="Email" name="user[email]">
                             </div>
+                            <div class="error-message" id="error-email"></div>
                             
                             <!-- User -->
                             <div class="form-group pb-1">
                                 <input type="text" class="form-control form-control-lg" id="username" placeholder="Username" name="user[userName]">
                             </div>
+                            <div class="error-message" id="error-username"></div>
                             
                             <!-- Password -->
                             <div class="form-group pb-1">
                                 <h6>Password must contain a number, symbol, and uppercase letter</h6>
                                 <input type="password" class="form-control form-control-lg" id="password" placeholder="Password" name="user[password]">
                             </div>
+                            <div class="error-message" id="error-password"></div>
 
                             <!-- Confirm Password -->
                             <div class="form-group pb-1">
                                 <input type="password" class="form-control form-control-lg" id="double-check-password" placeholder="Confirm Password" name="user[confirmedPassword]">
                             </div>
+                            <div class="error-message" id="error-confirmed-password"></div>
                             
                             <button type="submit" class="btn btn-block btn-lg btn-signup mt-4">Create Account</button>
 
@@ -99,6 +104,28 @@
                                 <a class="already" href="./login.html">Already have an account?</a>
                             </div>
                         </form>
+
+                        <script>
+                            const params = new URLSearchParams(window.location.search);
+                            const error = params.get('error');
+                            const signupForm = document.getElementById('textplaceholder');
+                            const errorMessage = document.createElement('p');
+                            errorMessage.className = 'error-message';
+
+                            if (error === 'emailInUse') {
+                                errorMessage.textContent = 'Email already in use.';
+                            }
+                            else if (error === 'passwordsDoNotMatch') {
+                                errorMessage.textContent = 'Passwords do not match.';
+                            }
+                            else if (error === 'invalidPassword') {
+                                errorMessage.textContent = 'Password does not meet requirements.'
+                            }
+
+                            if (errorMessage.textContent) {
+                                signupForm.prepend(errorMessage);
+                            }
+                        </script>
                     </div> 
                 </div>
             </div>
