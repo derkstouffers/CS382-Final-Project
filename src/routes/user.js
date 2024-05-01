@@ -47,21 +47,21 @@ router.post('/login', async (req, res) => {
     // Check if email already exists in the database
     if (userEmailFound != null) {
         console.log("Email already in use. Redirecting to signup.");
-        res.redirect("/pages/register.html");
+        res.redirect("/pages/register.html?error=emailInUse");
         return;
     }
 
     // Check if passwords match
     if (password !== confirmedPassword) {
         console.log("Passwords do not match. Redirecting to signup.");
-        res.redirect("/pages/register.html");
+        res.redirect("/pages/register.html?error=passwordsDoNotMatch");
         return;
     }
 
     // Check if password meets the regex requirements
     if (!passwordRegex.test(password)) {
         console.log("Password does not meet requirements. Redirecting to signup.");
-        res.redirect("/pages/register.html");
+        res.redirect("/pages/register.html?error=invalidPassword");
         return;
     }
     const newUser = new user({
