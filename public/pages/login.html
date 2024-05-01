@@ -66,6 +66,24 @@
                                     </div>
                                 </div>
                             </form>
+                            <script>
+                                const params = new URLSearchParams(window.location.search);
+                                const error = params.get('error');
+                                const loginForm = document.getElementById('login-form');
+                                const errorMessage = document.createElement('p');
+                                errorMessage.className = 'error-message';
+
+                                if (error === 'userNotFound') {
+                                    errorMessage.textContent = 'User not found.';
+                                }
+                                else if (error === 'wrongPassword') {
+                                    errorMessage.textContent = 'Wrong username or password. Please try again.';
+                                }
+
+                                if (errorMessage.textContent) {
+                                    loginForm.prepend(errorMessage);
+                                }
+                            </script>
                         </div>
                     </div>
                 </div>
