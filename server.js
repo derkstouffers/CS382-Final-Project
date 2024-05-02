@@ -28,7 +28,7 @@ const user = require('./src/routes/user.js');
 const settings = require('./src/routes/settings.js')
 
 app.use('/user', user);
-app.use('/setting', settings);
+app.use('/settings', settings);
 
 
 
