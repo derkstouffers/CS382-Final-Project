@@ -6,5 +6,7 @@ const mongoose = require('mongoose');
 const settings = require('../models/settings');
 
 router.post('/settings', (req, res) => {
-    
+    console.log("Testing in setting");
 });
+
+module.exports = settings;
