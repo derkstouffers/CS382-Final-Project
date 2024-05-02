@@ -26,6 +26,9 @@ app.use(express.static('public/'));
 const user = require('./src/routes/user.js');
 app.use('/user', user);
 
+const bank = require('./src/routes/bank.js');
+app.use('/bank', bank);
+
 
 
 // localhost:3000
