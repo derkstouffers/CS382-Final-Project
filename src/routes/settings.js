@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const settings = require('../models/settings.js');
 
 router.post('/', async (req, res) => {
-    const { userID, darkMode, shortTermLowerBound, shortTermUpperBound, longTermLowerBound, longTermUpperBound, shortTermGoal, longTermGoal, shortTermDescription, longTermDescription, shortTermGoalProgress, longTermGoalProgress, shortTermGoalDeadline, longTermGoalDeadline } = req.body;
+    const { userID, darkMode, shortTermLowerBound, shortTermUpperBound, longTermLowerBound, longTermUpperBound, shortTermGoal, longTermGoal, shortTermDescription, longTermDescription, shortTermGoalProgress, longTermGoalProgress, shortTermGoalDeadline, longTermGoalDeadline } = req.body.settings;
 
     try {
         let userSettings = await settings.findOneAndUpdate({ userID });
