@@ -9,7 +9,6 @@ const settings = require("../models/settings.js");
 
 const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$/;
 
-
 router.post('/login', async (req, res) => {
     //find user
     const { email, password } = req.body.user;
@@ -96,11 +95,12 @@ router.post('/login', async (req, res) => {
     // Create settings document for the user
     const newSettings = new settings({
         // Link the settings to the user
-        userID: newUser._id 
+        userID: newUser._id
     });
-
+    
     newSettings.save();
 
 });
+
 
 module.exports = router;
