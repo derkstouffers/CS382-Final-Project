@@ -38,7 +38,8 @@
 
                 <div class="col mt-4">
                     <div class="card-body">
-                        <form action="/settings/update" method="post">
+                        <form action="/settings" method="post">
+                            <div id="settings-form"></div>
                             
                             <!-- Settings -->
                             <div class="row">
@@ -69,10 +70,54 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <input type="text" class="form-control" id="shortTermGoal" placeholder="Short Term Goal" name="settings[shortTermGoal]">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <input type="text" class="form-control" id="longTermGoal" placeholder="Long Term Goal" name="settings[longTermGoal]">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <input type="text" class="form-control" id="shortTermDescription" placeholder="Description" name="settings[shortTermDescription]">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <input type="text" class="form-control" id="longTermDescription" placeholder="Description" name="settings[longTermDescription]">
+                                    </div>
+                                </div>
+                            </div>
                             
                             <button type="submit" class="btn btn-block btn-md btn-signup mt-4" >Save Settings</button>
 
                         </form>
+
+                        <script>
+                            const params = new URLSearchParams(window.location.search);
+                            const error = params.get('error');
+                            const settingsForm = document.getElementById('settings-form');
+                            const errorMessage = document.createElement('p');
+                            errorMessage.className = 'error-message';
+
+                            if (error === 'settingsNotSaved') {
+                                errorMessage.textContent = 'Settings not saved.';
+                            }
+
+                            if (errorMessage.textContent) {
+                                settingsForm.prepend(errorMessage);
+                            }
+                        </script>
                     </div> 
                 </div>
             </div>
