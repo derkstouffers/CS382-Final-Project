@@ -101,6 +101,11 @@ router.post('/login', async (req, res) => {
     newSettings.save();
 
 });
+router.get('/logout', (req, res) => {
+    console.log("Logged out successfully.");
+    res.redirect('/pages/login.html?message=loggedout');
+});
+
 
 
 module.exports = router;
