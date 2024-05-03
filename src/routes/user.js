@@ -83,6 +83,8 @@ router.post('/login', async (req, res) => {
     newUser.save()
         .then(settings => {
             console.log("Registration successful; redirected to dashboard.html");
+            // Generate bank data and create bank schema
+            // TODO
             res.redirect("/pages/dashboard.html");
             return;
         })
