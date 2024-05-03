@@ -32,6 +32,9 @@ app.use('/user', user);
 app.use('/settings', settings);
 app.use('/bills', bills);
 
+const bank = require('./src/routes/bank.js');
+app.use('/bank', bank);
+
 
 
 // localhost:3000
