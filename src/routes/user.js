@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 //Import user schema
 const user = require('../models/user.js');
 const settings = require("../models/settings.js");
+const bills = require("../models/bills.js");
 
 const passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$/;
 
@@ -97,9 +98,13 @@ router.post('/login', async (req, res) => {
         // Link the settings to the user
         userID: newUser._id
     });
-    
-    newSettings.save();
 
+    const newBills = new bills({
+        userID: newUser._id
+    });
+
+    newSettings.save();
+    newBills.save();
 });
 router.get('/logout', (req, res) => {
     console.log("Logged out successfully.");
