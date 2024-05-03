@@ -44,7 +44,7 @@
                     </div>
 
                     <!-- right side -->
-                    <div class="col right-side">
+                    <div class="col right-side" id="form-right-side">
                         <!-- Login Page -->
                         <div class="login-form" id="login-form" style="display: flex;">
                             <form action="/user/login" method="post">
@@ -66,25 +66,9 @@
                                     </div>
                                 </div>
                             </form>
-                            <script>
-                                const params = new URLSearchParams(window.location.search);
-                                const error = params.get('error');
-                                const loginForm = document.getElementById('login-form');
-                                const errorMessage = document.createElement('p');
-                                errorMessage.className = 'error-message';
-
-                                if (error === 'userNotFound') {
-                                    errorMessage.textContent = 'User not found.';
-                                }
-                                else if (error === 'wrongPassword') {
-                                    errorMessage.textContent = 'Wrong username or password. Please try again.';
-                                }
-
-                                if (errorMessage.textContent) {
-                                    loginForm.prepend(errorMessage);
-                                }
-                            </script>
                         </div>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -102,6 +86,28 @@
                 if (message === 'loggedout') {
                     alert('Logged out successfully.');
                 }
+            }
+        </script>
+
+        <!-- dealing with errors and alerts -->
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const error = params.get('error');
+            const loginForm = document.getElementById('form-right-side');
+            const errorMessage = document.createElement('p');
+
+            if (error === 'userNotFound') {
+                alert("User not found");
+                errorMessage.style.color = "red";
+                errorMessage.textContent = 'User not found';
+            }
+            else if (error === 'wrongPassword') {
+                errorMessage.style.color = "red";
+                errorMessage.textContent = 'Wrong username or password. Please try again.';
+            }
+
+            if (errorMessage.textContent) {
+                loginForm.append(errorMessage);
             }
         </script>
         
