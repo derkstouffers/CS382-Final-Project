@@ -67,7 +67,45 @@ async function fetchPublicToken() {
     }
   }
 
+    // Helper Functions to fetch manipulate data
+    // from /transactions/sync endpoint
+
+    // Precondition: Array containing dictionaries of transactions info
+    // Postconditio: Array of dictionaries containing wanted transaction info per transaction
+    function GetTransactionList(data) {
+        let transactions = [];
+        for(let i = 0; i < data.length; i++){
+            let currentTransaction = data[i];
+            let transaction = {
+                "date": currentTransaction.authorized_date, // Date
+                "merchantName": currentTransaction.merchant_name, // String
+                "cost": currentTransaction.amount, // Number
+                "category": currentTransaction.category // array of the categories transaction falls under
+            }
+            transactions.push(transaction);
+        }
+        return transactions;
+    }
+
+    // Precondition: Array containing dictionaries of account info
+    // Postconditio: Array of dictionaries containing wanted account info per account
+    function GetAccountInfo(data) {
+        let accounts = [];
+        for(let i = 0; i < data.length; i++){
+            let currentAccount = data[i];
+            let account = {
+                "account_id": currentAccount.account_id,
+                "account_name": currentAccount.official_name,
+                "subtype": currentAccount.subtype,
+                "current_balance_available": currentAccount.balances.current
+            }
+            accounts.push(account);
+        }
+        return accounts;
+    }
+    
   // Routes to validate the output of API Calls
+  // TODO: Remove before final submission
   router.get('/public-token', (req, res) => {
     ans = fetchPublicToken();
     res.send('public-token fetched');
@@ -87,6 +125,51 @@ async function fetchPublicToken() {
       res.status(500).send('Internal Server Error');
     }
   });
+
+  // Routes to examine the output the above helper functions
+  // TODO: Remove before final submission
+  router.get('/test-1', async (req, res) => {
+    try {
+      const transactionSyncResponse = await fetchTransactionSync();
+      console.log(transactionSyncResponse.accounts);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  router.get('/test-2', async (req, res) => {
+    try {
+      const transactionSyncResponse = await fetchTransactionSync();
+      console.log(transactionSyncResponse.added);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  router.get('/test-3', async (req, res) => {
+    try {
+      const transactionSyncResponse = await fetchTransactionSync();
+      let transactions = GetTransactionList(transactionSyncResponse.added);
+      console.log(transactions);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  router.get('/test-4', async (req, res) => {
+    try {
+      const transactionSyncResponse = await fetchTransactionSync();
+      let accounts = GetAccountInfo(transactionSyncResponse.accounts);
+      console.log(accounts);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
 
 
 module.exports = router;
