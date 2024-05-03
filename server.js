@@ -25,10 +25,12 @@ app.use(express.static('public/'));
 
 //Import routes
 const user = require('./src/routes/user.js');
-const settings = require('./src/routes/settings.js')
+const settings = require('./src/routes/settings.js');
+const bills = require('./src/routes/bills.js');
 
 app.use('/user', user);
 app.use('/settings', settings);
+app.use('/bills', bills);
 
 
 
