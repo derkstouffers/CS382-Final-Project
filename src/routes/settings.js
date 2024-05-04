@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
 
         await userSettings.save();
         console.log("Settings saved successfully");
-        res.redirect("/pages/dashboard.html");
+        res.redirect("/pages/dashboard.html?status=success");
         return;
     } //End try
 

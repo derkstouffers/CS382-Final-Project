@@ -17,7 +17,7 @@ main().then(function() {
 const userModel = require('./src/models/user.js');
 
 app.set("view engine", "ejs");
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended : true})); // getting rid of that dang error. if code breaks, delete the parameter
 app.use(express.json());
 
 app.use(express.static('public/'));
@@ -31,6 +31,9 @@ const bills = require('./src/routes/bills.js');
 app.use('/user', user);
 app.use('/settings', settings);
 app.use('/bills', bills);
+
+const bank = require('./src/routes/bank.js');
+app.use('/bank', bank);
 
 
 
