@@ -22,6 +22,7 @@ router.post('/', async (req, res) => {
     const {darkMode, shortTermLowerBound, shortTermUpperBound, longTermLowerBound, longTermUpperBound, shortTermGoal, longTermGoal, shortTermDescription, longTermDescription, shortTermGoalProgress, longTermGoalProgress, shortTermGoalDeadline, longTermGoalDeadline } = req.body.settings;
     const userID = global.userID; // @sarah use this userID for everything else. if it breaks, it aint me
     console.log('settings', userID);
+
     try {
         let userSettings = await settings.findOne({ userID });
 
