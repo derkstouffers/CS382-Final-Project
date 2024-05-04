@@ -169,7 +169,11 @@ async function fetchPublicToken() {
       res.status(500).send('Internal Server Error');
     }
   });
-  
+
 
 
 module.exports = router;
+// Export the functions separately
+module.exports.fetchTransactionSync = fetchTransactionSync;
+module.exports.GetTransactionList = GetTransactionList;
+module.exports.GetAccountInfo = GetAccountInfo;

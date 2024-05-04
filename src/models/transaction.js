@@ -6,10 +6,23 @@ const transactionSchema = new mongoose.Schema({
     date: Date,
     merchantName: String,
     cost: Number,
-    category: String
+    category: [String]
 });
 
 let transaction = mongoose.model('transaction', transactionSchema);
+
+transactionSchema.statics.toTransactionDocument = function(data) {
+
+    const transformedData = {
+        userID: String,
+        date: Date,
+        merchantName: String,
+        cost: Number,
+        category: [String]
+      };
+
+    return new this(transformedData);
+  };
 
 module.exports = transaction;
 
