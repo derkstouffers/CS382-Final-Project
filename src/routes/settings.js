@@ -2,8 +2,20 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// import user schemas
+// import setting schemas
 const settings = require('../models/settings.js');
+
+app.get('api/mongoDB/setting', async (req, res) => {
+    try{
+        const allTransactions = await transactions.find();
+        console.log('transaction api call completed.');
+        res.json(allTransactions);
+
+    }catch (error){
+        console.error("Error getting transactions. Check API call!")
+        res.status(500).json({message : 'Server Error'});
+    }
+});
 
 router.post('/', async (req, res) => {
     const { userID, darkMode, shortTermLowerBound, shortTermUpperBound, longTermLowerBound, longTermUpperBound, shortTermGoal, longTermGoal, shortTermDescription, longTermDescription, shortTermGoalProgress, longTermGoalProgress, shortTermGoalDeadline, longTermGoalDeadline } = req.body.settings;
