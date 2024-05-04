@@ -1,14 +1,32 @@
 @import url('styles.css');
 
-nav {
+nav, footer {
     /* from https://cssgradient.io/ */
     background: var(--accent-color);
     background: linear-gradient(45deg, var(--accent-color) 20%, #009E60 75%, #157F1F 100%);
-    
+}
+
+nav {
     border-bottom-left-radius: 2.5rem;
     border-bottom-right-radius: 2.5rem;
 }
 
+footer {
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+}
+
 nav li.nav-item {
-    font-size: 24px;
+    font-size: calc(var(--fs-body) + 0.05rem);
+}
+
+nav li.nav-item a {
+    text-decoration: none;
+    transition: font-size 0.5s ease;
+}
+
+nav li.nav-item a:hover {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-size: calc(var(--fs-body) + 0.15rem);
 }

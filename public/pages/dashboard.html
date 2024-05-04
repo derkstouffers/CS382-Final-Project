@@ -30,163 +30,182 @@
     </head>
 
     <body>
-        
-      <div class="container-fluid">
-            <!-- nav bar -->
-            <nav class="navbar navbar-expand-lg">
-              <!-- Burger Menu for Smaller Screens -->
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="navbar-toggler-icon fa-solid fa-bars"></i>
-              </button>
+      <div class="container-fluid px-4">
+        <!-- nav bar -->
+        <nav class="navbar navbar-expand-lg">
+          <!-- Burger Menu for Smaller Screens -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="navbar-toggler-icon fa-solid fa-bars"></i>
+          </button>
 
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto"> <!-- fix spacing here later-->
-                  <!-- Home -->
-                  <li class="nav-item mx-4">
-                    <a href="dashboard.html"><i class="fa-solid fa-house"></i></a>
-                  </li>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <!-- Home -->
+              <li class="nav-item mx-4">
+                <a href="dashboard.html"><i class="fa-solid fa-house px-2"></i></a>
+              </li>
 
-                  <!-- Bills -->
-                  <li class="nav-item mx-4">
-                    <a href="bills.html">Bills</a>
-                  </li>
+              <!-- Bills -->
+              <li class="nav-item mx-4">
+                <a href="bills.html"><i class="fa-solid fa-money-bill px-2"></i>Bills</a>
+              </li>
 
-                  <!-- About Us -->
-                  <li class="nav-item mx-4">
-                    <a href="about.html">About Us</a>
-                  </li>
+              <!-- About Us -->
+              <li class="nav-item mx-4">
+                <a href="about.html"><i class="fa-solid fa-address-card px-2"></i>About Us</a>
+              </li>
 
-                  <!-- Contact Us -->
-                  <li class="nav-item mx-4">
-                    <a href="contact.html">Contact Us</a>
-                  </li>
+              <!-- Contact Us -->
+              <li class="nav-item mx-4">
+                <a href="contact.html"><i class="fa-solid fa-phone px-2"></i>Contact Us</a>
+              </li>
 
-                  <!-- Settings -->
-                  <li class="nav-item mx-4">
-                    <a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>
-                  </li>
+              <!-- Settings -->
+              <li class="nav-item mx-4">
+                <a href="settings.html"><i class="fa-solid fa-gear px-2"></i>Settings</a>
+              </li>
 
-                  <!-- Logout -->
-                  <li class="nav-item mx-4">
-                    <a href="/user/logout">Logout</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+              <!-- Logout -->
+              <li class="nav-item mx-4">
+                <a href="/user/logout"><i class="fa-solid fa-right-from-bracket px-2"></i>Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-            <!-- main content -->
-            <main class="pt-4">
-              <div class="row">
-                <!-- net worth display -->
-                <div class="col-8">
-                  <div class="card">
-                    <p class="card-title section-text section-title mt-3 px-4">$42,069</p>
-                    <div class="card-body mt-0 pt-0">
-                      <div class="chart">
-                        <canvas id="areaChart1"></canvas>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="col-4">
-                  <div class="card h-100">
-                    <!-- move font styling to css l8r - deric -->
-                    <p class="card-title section-text section-subtitle mt-3 text-center font-weight-bold">Upcoming Bills</p>
-                    <div class="card-body mx-3">
-                      <!-- Figure out better way to style this -->
-                      <ul>
-                        <li>Phone Bill</li>
-                        <li>Rent</li>
-                        <li>Payoff the Hitman</li>
-                        <li>Anti Alen Billboard Fee</li>
-                        <li>Student Loans</li>
-                        <li>Electric</li>
-                        <li>Anti Alen Billboard 2 Fee</li>
-                      </ul>
-                    </div>
+        <!-- main content -->
+        <main class="py-3">
+          <div class="row">
+            <!-- net worth display -->
+            <div class="col-8">
+              <div class="card h-100">
+                <p class="card-title section-text section-title mt-3 px-4">$42,069</p>
+                <div class="card-body">
+                  <div class="chart">
+                    <canvas id="myDoughnutChart"></canvas>
                   </div>
                 </div>
               </div>
-  
-              <!-- figure out this section -->
-              <div class="row pt-4">
-                <div class="col">
-                  <div class="card">
-                    <p class="card-title section-text section-subtitle mt-3 px-4 font-weight-bold">Budgets</p>
-                    <div class="card-body mt-0 mx-3 pt-0">
-                      <!-- Figure out better way to style this -->
-                      <ul>
-                        <li>Groceries</li>
-                        <li>Entertainment</li>
-                        <li>Gas</li>
-                      </ul>
+            </div>
+
+            <!-- upcoming williams -->
+            <div class="col-4">
+              <div class="card h-100">
+                <!-- move font styling to css l8r - deric -->
+                <p class="card-title section-text section-subtitle mt-3 text-center font-weight-bold">Upcoming Bills</p>
+                <div class="card-body mx-3">
+                  <!-- Figure out better way to style this -->
+                  <ul>
+                    <li>Phone Bill</li>
+                    <li>Rent</li>
+                    <li>Anti Alen Billboard Fee</li>
+                    <li>Student Loans</li>
+                    <li>Electric</li>
+                    <li>Anti Alen Billboard 2 Fee</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row pt-3">
+            <!-- bud get -->
+            <div class="col">
+              <div class="card h-100">
+                <p class="card-title section-text section-subtitle mt-3 px-4 font-weight-bold">Budgets</p>
+                <div class="card-body mt-0 mx-3 pt-0">
+                  <!-- Figure out better way to style this -->
+                  <ul>
+                    <li>Groceries</li>
+                    <li>Entertainment</li>
+                    <li>Gas</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- dreams n goals n goals n dreams -->
+            <div class="col">
+              <div class="card h-100">
+                <p class="card-title section-text section-subtitle mt-3 mb-0 px-4 font-weight-bold">Goals</p>
+                <div class="card-body px-5 pt-1 pb-4">
+                  <div class="goal">
+                    <div class="goal-title">Goal 1</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
-                </div>
-  
-                <div class="col">
-                  <div class="card h-100">
-                    <p class="card-title section-text section-subtitle mt-3 mb-1 px-4 font-weight-bold">Goals</p>
-                    <div class="card-body mt-0 mx-3 pt-0">
-                      <!-- Figure out better way to style this -->
-                      <ul>
-                        <li>Save up for 3rd Anti Alen Billboard</li>
-                        <li>Start up Emergency Fund</li>
-                        <li>Vacation to Somewhere Fund</li>
-                      </ul>
+                  <div class="goal">
+                    <div class="goal-title">Goal 1</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="goal">
+                    <div class="goal-title">Goal 1</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="goal">
+                    <div class="goal-title">Goal 1</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="goal">
+                    <div class="goal-title">Goal 1</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="goal">
+                    <div class="goal-title">Goal 1</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
               </div>
-            </main>
+            </div>
+          </div>
+        </main>
             
-            <!-- footer -->
-            <footer></footer>
+        <!-- footer -->
+        <footer class="footer">
+          <div class="copyright d-flex align-items-center justify-content-center py-2 font-weight-bold">© 2024 Finance and $tonks LLC Inc. ™</div>
+        </footer>
       </div>
 
-      <script> 
-        var ctx = document.getElementById('areaChart1').getContext('2d'); 
-        var myChart = new Chart(ctx, { 
-            type: 'line', 
-            data: { 
-                labels: ['January', 
-                         'February',  
-                         'March',  
-                         'April', 
-                         'May'], 
-                datasets: [{ 
-                    data: [5000, 7500, 8000, 6000, 9000], 
-                    backgroundColor: 'rgba(75, 192, 192, 0.5)', 
-                    borderColor: 'rgba(75, 192, 192, 1)', 
-                    borderWidth: 2, 
-                    fill: 'start' 
-                }] 
-            }, 
-            options: { 
-                scales: { 
-                    y: { 
-                        beginAtZero: true, 
-                        title: { 
-                            display: false, 
-                            text: 'Page Views' 
-                        } 
-                    } 
-                }, 
-                layout: { 
-                    padding: { 
-                        left: 20, 
-                        right: 20, 
-                        top: 20, 
-                        bottom: 20 
-                    } 
-                } 
-            } 
-        }); 
+      <script>
+        // Data for the chart
+        var data = {
+            datasets: [{
+                data: [300, 50, 100],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+            }]
+        };
+
+        // Configuration options
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false
+        };
+
+        // Get the context of the canvas element we want to select
+        var ctx = document.getElementById('myDoughnutChart').getContext('2d');
+
+        // Create the doughnut chart
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: data,
+            options: options
+        });
       </script>
-        
-        <!-- popper & bootstrap/jquery -->
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+      <!-- popper & bootstrap/jquery -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
