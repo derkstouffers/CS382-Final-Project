@@ -10,7 +10,7 @@ const plaid = require('./bank.js');
 
 // GET transactions
 // A route to get all transactions
-app.get('api/mongoDB/transaction', async (req, res) => {
+router.get('api/mongoDB/transaction', async (req, res) => {
     try{
         const allTransactions = await transactions.find();
         console.log('transaction api call completed.');

@@ -16,19 +16,20 @@ router.post('/', async (req, res) => {
         let userBills = await bills.findOne({userID});
 
         if (!userBills) {
-            return res.status(404).send("Bills not found for the users.");
+            userBill = new bills({
+                userID,
+                bills: []
+            });
+        }  
+        
+        if (!userBills.bills) {
+            userBills.bills = [];
         }
-
-        else {
-            userBills.name = name;
-            userBills.amount = amount;
-            userBills.frequency = frequency;
-            userBills.dueDate = dueDate;
-        }
+        userBills.bills.push({name, amount, frequency, dueDate});
         
         await userBills.save();
         console.log("Bills saved successfully");
-        res.redirect("/pages/dashboard.html");
+        res.redirect("/pages/dashboard.html?message=saveSuccess");
         return;
     }
 
