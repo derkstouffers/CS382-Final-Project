@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
     const userID = global.userID; // @sarah use this userID for everything else. if it breaks, it aint me
     console.log('settings', userID);
     try {
-        let userSettings = await settings.findOneAndUpdate({ userID });
+        let userSettings = await settings.findOne({ userID });
 
         if (!userSettings) {
             return res.status(404).send("Settings not found for the user.");
