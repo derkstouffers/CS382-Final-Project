@@ -35,8 +35,8 @@ app.use('/bills', bills);
 const bank = require('./src/routes/bank.js');
 app.use('/bank', bank);
 
-const transactions = require('./src/routes/transaction.js');
-app.use('/api/mongoDB/transaction');
+const transactionsRoute = require('./src/routes/transaction.js');
+app.use('/api/mongoDB/transaction', transactionsRoute); // DO NOT CHANGE THIS ROUTE - PERIOD.
 
 // localhost:3000
 server.listen(PORT, () => {
