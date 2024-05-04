@@ -177,33 +177,6 @@
         </footer>
       </div>
 
-      <script>
-        // Data for the chart
-        var data = {
-            datasets: [{
-                data: [300, 50, 100],
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-                hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-            }]
-        };
-
-        // Configuration options
-        var options = {
-            responsive: true,
-            maintainAspectRatio: false
-        };
-
-        // Get the context of the canvas element we want to select
-        var ctx = document.getElementById('myDoughnutChart').getContext('2d');
-
-        // Create the doughnut chart
-        var myDoughnutChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: data,
-            options: options
-        });
-      </script>
-      
        <!-- settings redirect to dash so alert that settings are saved properly -->
       <script>
         const params = new URLSearchParams(window.location.search);
@@ -217,5 +190,6 @@
         <!-- popper & bootstrap/jquery -->
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body>
+        <script src="../js/dashboard.js"></script>
+      </body>
 </html>
