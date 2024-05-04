@@ -22,8 +22,9 @@ router.post('/', async (req, res) => {
     const {darkMode, shortTermLowerBound, shortTermUpperBound, longTermLowerBound, longTermUpperBound, shortTermGoal, longTermGoal, shortTermDescription, longTermDescription, shortTermGoalProgress, longTermGoalProgress, shortTermGoalDeadline, longTermGoalDeadline } = req.body.settings;
     const userID = global.userID; // @sarah use this userID for everything else. if it breaks, it aint me
     console.log('settings', userID);
+
     try {
-        let userSettings = await settings.findOneAndUpdate({ userID });
+        let userSettings = await settings.findOne({ userID });
 
         if (!userSettings) {
             return res.status(404).send("Settings not found for the user.");
@@ -39,10 +40,10 @@ router.post('/', async (req, res) => {
             userSettings.longTermGoal = longTermGoal;
             userSettings.shortTermDescription = shortTermDescription;
             userSettings.longTermDescription = longTermDescription;
-            // userSettings.shortTermGoalProgress = shortTermGoalProgress;
-            // userSettings.longTermGoalProgress = longTermGoalProgress;
-            // userSettings.shortTermGoalDeadline = shortTermGoalDeadline;
-            // userSettings.longTermGoalDeadline = longTermGoalDeadline;
+            userSettings.shortTermGoalProgress = shortTermGoalProgress;
+            userSettings.longTermGoalProgress = longTermGoalProgress;
+            userSettings.shortTermGoalDeadline = shortTermGoalDeadline;
+            userSettings.longTermGoalDeadline = longTermGoalDeadline;
         } //End else
 
         await userSettings.save();

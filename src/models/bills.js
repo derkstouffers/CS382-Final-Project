@@ -6,7 +6,13 @@ const billSchema = new mongoose.Schema({
     name: String,
     amount: Number,
     frequency: String,
-    dueDate: Date
+    dueDate: Date,
+    bills: [{
+      name: String,
+      amount: Number,
+      frequency: String,
+      dueDate: Date
+    }]
   });
 
 const bills = mongoose.model('bills', billSchema);

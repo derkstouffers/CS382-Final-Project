@@ -45,18 +45,26 @@
                             <div class="row">
                                 <div class="col">
                                     <div data-mdb-input-init class="form-outline mb-2">
-                                        <input type="number" class="form-control" id="shortTermLowerBound" placeholder="Short Term Lower Bound Amount" name="settings[shortTermLowerBound]">
+                                        <input type="number" class="form-control" id="shortTermUpperBound" placeholder="Short Term Upper Bound" name="settings[shortTermUpperBound]">
                                     </div>
                                 </div>
                                 
                                 <div class="col">
                                     <div data-mdb-input-init class="form-outline mb-2">
-                                        <input type="number" class="form-control" id="shortTermUpperBound" placeholder="Short Term Upper Bound" name="settings[shortTermUpperBound]">
+                                        <input type="number" class="form-control" id="longTermUpperBound" placeholder="Long Term Upper Bound Amount" name="settings[longTermUpperBound]">
                                     </div>
                                 </div>
+
+                                
                             </div>
                             
                             <div class="row">
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <input type="number" class="form-control" id="shortTermLowerBound" placeholder="Short Term Lower Bound Amount" name="settings[shortTermLowerBound]">
+                                    </div>
+                                </div>
+                                
                                 <div class="col">
                                     <div data-mdb-input-init class="form-outline mb-2">
                                         <input type="number" class="form-control" id="longTermLowerBound" placeholder="Long Term Lower Bound Amount" name="settings[longTermLowerBound]">
@@ -64,11 +72,6 @@
                                 </div>
                                 
                                 
-                                <div class="col">
-                                    <div data-mdb-input-init class="form-outline mb-2">
-                                        <input type="number" class="form-control" id="longTermUpperBound" placeholder="Long Term Upper Bound Amount" name="settings[longTermUpperBound]">
-                                    </div>
-                                </div>
                             </div>
 
                             <div class="row">
@@ -95,6 +98,36 @@
                                 <div class="col">
                                     <div data-mdb-input-init class="form-outline mb-2">
                                         <input type="text" class="form-control" id="longTermDescription" placeholder="Description" name="settings[longTermDescription]">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <input type="text" class="form-control" id="shortTermGoalProgress" placeholder="Progress Short-Term" name="settings[shortTermGoalProgress]">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <input type="text" class="form-control" id="longTermGoalProgress" placeholder="Progress Long-Term Goal" name="settings[longTermGoalProgress]">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <label for="shortTemGoalDeadline">Deadline</label>
+                                        <input type="date" class="form-control" id="shortTemGoalDeadline" placeholder="Deadline for Short-Term Goal" name="settings[shortTemGoalDeadline]">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div data-mdb-input-init class="form-outline mb-2">
+                                        <label for="longTermGoalDeadline">Deadline</label>
+                                        <input type="date" class="form-control" id="longTermGoalDeadline" placeholder="Deadline for Long-Term Goal" name="settings[longTermGoalDeadline]">
                                     </div>
                                 </div>
                             </div>
