@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.static('public/'));
 
 
-//Import routes
+// Import routes
 const user = require('./src/routes/user.js');
 const settings = require('./src/routes/settings.js');
 const bills = require('./src/routes/bills.js');
@@ -35,7 +35,8 @@ app.use('/bills', bills);
 const bank = require('./src/routes/bank.js');
 app.use('/bank', bank);
 
-
+const transactions = require('./src/routes/transaction.js');
+app.use('/api/mongoDB/transaction');
 
 // localhost:3000
 server.listen(PORT, () => {
