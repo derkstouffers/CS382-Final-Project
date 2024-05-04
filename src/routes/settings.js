@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+require('./user.js'); // contains the global userID
 
 // import setting schemas
 const settings = require('../models/settings.js');
 
-app.get('api/mongoDB/setting', async (req, res) => {
+router.get('api/mongoDB/setting', async (req, res) => {
     try{
         const allTransactions = await transactions.find();
         console.log('transaction api call completed.');
@@ -18,8 +19,9 @@ app.get('api/mongoDB/setting', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    const { userID, darkMode, shortTermLowerBound, shortTermUpperBound, longTermLowerBound, longTermUpperBound, shortTermGoal, longTermGoal, shortTermDescription, longTermDescription, shortTermGoalProgress, longTermGoalProgress, shortTermGoalDeadline, longTermGoalDeadline } = req.body.settings;
-
+    const {darkMode, shortTermLowerBound, shortTermUpperBound, longTermLowerBound, longTermUpperBound, shortTermGoal, longTermGoal, shortTermDescription, longTermDescription, shortTermGoalProgress, longTermGoalProgress, shortTermGoalDeadline, longTermGoalDeadline } = req.body.settings;
+    const userID = global.userID; // @sarah use this userID for everything else. if it breaks, it aint me
+    console.log('settings', userID);
     try {
         let userSettings = await settings.findOneAndUpdate({ userID });
 
