@@ -40,10 +40,10 @@ router.post('/', async (req, res) => {
             userSettings.longTermGoal = longTermGoal;
             userSettings.shortTermDescription = shortTermDescription;
             userSettings.longTermDescription = longTermDescription;
-            // userSettings.shortTermGoalProgress = shortTermGoalProgress;
-            // userSettings.longTermGoalProgress = longTermGoalProgress;
-            // userSettings.shortTermGoalDeadline = shortTermGoalDeadline;
-            // userSettings.longTermGoalDeadline = longTermGoalDeadline;
+            userSettings.shortTermGoalProgress = shortTermGoalProgress;
+            userSettings.longTermGoalProgress = longTermGoalProgress;
+            userSettings.shortTermGoalDeadline = shortTermGoalDeadline;
+            userSettings.longTermGoalDeadline = longTermGoalDeadline;
         } //End else
 
         await userSettings.save();

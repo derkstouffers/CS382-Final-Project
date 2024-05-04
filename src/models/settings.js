@@ -11,11 +11,11 @@ const settingsSchema = new mongoose.Schema({
     shortTermGoal: {type: String, default: null},
     longTermGoal: {type: String, default: null},
     shortTermDescription: { type: String, default: null },
-    longTermDescription: { type: String, default: null }
-    // shortTermGoalProgress: { type: Number, default: 0 },
-    // longTermGoalProgress: { type: Number, default: 0 },
-    // shortTermGoalDeadline: { type: Date, default: null },
-    // longTermGoalDeadline: { type: Date, default: null }
+    longTermDescription: { type: String, default: null },
+    shortTermGoalProgress: { type: Number, default: 0 },
+    longTermGoalProgress: { type: Number, default: 0 },
+    shortTermGoalDeadline: { type: Date, default: null },
+    longTermGoalDeadline: { type: Date, default: null }
 });
 
 let settings = mongoose.model('settings', settingsSchema);
