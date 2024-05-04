@@ -21,8 +21,9 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body.user;
 
     const foundUser = await user.findOne({email});
-    //console.log(foundUser._id.toString());
+    
     global.userID = foundUser._id.toString();
+    const userID = global.userID;
 
     // check if the user exists
     if (!foundUser) {
@@ -34,7 +35,9 @@ router.post('/login', async (req, res) => {
     // Check if password is valid
     if (foundUser.validPass(password)) {
         console.log("Login successful; redirected to dashboard.html");
-        res.redirect("/pages/dashboard.html");
+        // throw the userID in the URL
+        const redirectURL = `/pages/dashboard.html?userID=${userID}`;
+        res.redirect(redirectURL);
         return;
     } else {
         // password is wrong 
@@ -95,7 +98,7 @@ router.post('/login', async (req, res) => {
     newUser.save()
         .then(settings => {
             console.log("Registration successful; redirected to dashboard.html");
-            res.redirect("/pages/dashboard.html");
+            res.redirect("/pages/dashboard.html"); // TODO: figure out if we need userID in param here
             return;
         })
         .catch(err => {
