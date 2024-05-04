@@ -1,15 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-
+require('./user.js'); // contains the global userID
 //Import user schema
 const bills = require('../models/bills.js');
 
 router.post('/', async (req, res) => {
-    const {userID, name, amount, frequency, dueDate} = req.body.bills;
+    const {name, amount, frequency, dueDate} = req.body.bills;
+    const userID = global.userID;
     
+    // TODO: figure out the userID undefined error here
+    console.log("userID (currently in bill.js) ", userID);
+
     try {
-        let userBills = await bills.findOneAndUpdate({userID});
+        let userBills = await bills.findOne({userID});
 
         if (!userBills) {
             return res.status(404).send("Bills not found for the users.");
