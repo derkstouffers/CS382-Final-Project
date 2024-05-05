@@ -2,7 +2,6 @@
 
 body {
     /* from https://cssgradient.io/ */
-    /* from https://cssgradient.io/ */
     background: var(--accent-color);
     background: linear-gradient(45deg, var(--accent-color) 20%, #009E60 75%, #157F1F 100%);
 

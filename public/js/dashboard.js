@@ -38,7 +38,7 @@ fetch(`/api/mongoDB/transaction?userID=${userID}`).then(response => {
                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
                 hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
             }],
-            labels: ['Travel', 'Food', 'Others']
+            labels: ['Travel', 'Food', 'Misc.']
         };
 
         // Configuration options

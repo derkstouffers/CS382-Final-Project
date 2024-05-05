@@ -16,7 +16,6 @@
 
         <!-- styling links -->
         <link rel="stylesheet" href="../styles/styles.css">
-        <link rel="stylesheet" href="../styles/dashboard.css">
 
         <!-- font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +24,7 @@
 
         <!-- javascript -->
         <script src="../js/script.js"></script>
+        <script src="../js/dashboard.js"></script>
 
         <title>Finance & Stonks</title>
     </head>
@@ -42,7 +42,7 @@
             <ul class="navbar-nav mx-auto">
               <!-- Home -->
               <li class="nav-item mx-4">
-                <a href="dashboard.html"><i class="fa-solid fa-house px-2"></i></a>
+                <a class="active" href="/dashboard.html"><i class="fa-solid fa-house px-2"></i></a>
               </li>
 
               <!-- Bills -->
@@ -74,7 +74,7 @@
         </nav>
 
         <!-- main content -->
-        <main class="py-3">
+        <main class="py-5">
           <div class="row">
             <!-- net worth display -->
             <div class="col-8">
@@ -108,18 +108,30 @@
             </div>
           </div>
 
-          <div class="row pt-3">
+          <div class="row pt-5">
             <!-- bud get -->
             <div class="col">
               <div class="card h-100">
                 <p class="card-title section-text section-subtitle mt-3 px-4 font-weight-bold">Budgets</p>
                 <div class="card-body mt-0 mx-3 pt-0">
-                  <!-- Figure out better way to style this -->
-                  <ul>
-                    <li>Groceries</li>
-                    <li>Entertainment</li>
-                    <li>Gas</li>
-                  </ul>
+                  <div class="budget pb-2">
+                    <div class="budget-title">Groceries</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="budget pb-2">
+                    <div class="budget-title">Gas</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                  <div class="budget pb-2">
+                    <div class="budget-title">Misc.</div>
+                    <div class="progress">
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -128,41 +140,35 @@
             <div class="col">
               <div class="card h-100">
                 <p class="card-title section-text section-subtitle mt-3 mb-0 px-4 font-weight-bold">Goals</p>
-                <div class="card-body px-5 pt-1 pb-4">
-                  <div class="goal">
+                <div class="card-body px-5 pt-2 pb-4">
+                  <div class="goal pb-2">
                     <div class="goal-title">Goal 1</div>
                     <div class="progress">
                       <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
-                  <div class="goal">
-                    <div class="goal-title">Goal 1</div>
+                  <div class="goal pb-2">
+                    <div class="goal-title">Goal 2</div>
                     <div class="progress">
                       <div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
-                  <div class="goal">
-                    <div class="goal-title">Goal 1</div>
+                  <div class="goal pb-2">
+                    <div class="goal-title">Goal 3</div>
                     <div class="progress">
-                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
-                  <div class="goal">
-                    <div class="goal-title">Goal 1</div>
+                  <div class="goal pb-2">
+                    <div class="goal-title">Goal 4</div>
                     <div class="progress">
-                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
-                  <div class="goal">
-                    <div class="goal-title">Goal 1</div>
+                  <div class="goal pb-2">
+                    <div class="goal-title">Goal 5</div>
                     <div class="progress">
-                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                  <div class="goal">
-                    <div class="goal-title">Goal 1</div>
-                    <div class="progress">
-                      <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
                 </div>
@@ -172,7 +178,7 @@
         </main>
             
         <!-- footer -->
-        <footer class="footer">
+        <footer class="footer fixed-bottom mx-4">
           <div class="copyright d-flex align-items-center justify-content-center py-2 font-weight-bold">© 2024 Finance and $tonks LLC Inc. ™</div>
         </footer>
       </div>
