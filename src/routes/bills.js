@@ -38,8 +38,39 @@ router.post('/', async (req, res) => {
         res.redirect("/pages/bills.html?error=billsNotSaved");
         return;
     }
-  });
+});
 
+// get route for fetching bills
+router.get('/', async (req, res) => {
+    const userID = global.userID; 
+    
+    try{
+        console.log(`attempting to get bills for user: ${userID}`);
+        const allBills = await bills.find({userID});
+        console.log(allBills);
+        console.log('bill api call completed.')
+        res.json(allBills);
 
+    }catch (error){
+        console.error('Error getting bills. Check route in bills.js');
+        res.status(500).json({message : 'Server Error'});
+    }
+});
+
+router.get('/api/mongoDB/bills', async (req, res) => {
+    const userID = global.userID; 
+    
+    try{
+        console.log(`attempting to get bills for user: ${userID}`);
+        const allBills = await bills.find({userID});
+        console.log(allBills);
+        console.log('bill api call completed.')
+        res.json(allBills);
+
+    }catch (error){
+        console.error('Error getting bills. Check route in bills.js');
+        res.status(500).json({message : 'Server Error'});
+    }
+});
   
-  module.exports = router;
+module.exports = router;
