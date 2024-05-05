@@ -1,9 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 const userID = urlParams.get('userID');
 
-let travel = 0;
-let food = 0;
-let etc = 0;
+let travel = 50;
+let food = 100;
+let etc = 30;
 
 // access the data from mongo. 
 // make sure this always matches with routes/transactions.js GET
@@ -38,7 +38,7 @@ fetch(`/api/mongoDB/transaction?userID=${userID}`).then(response => {
                 backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
                 hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
             }],
-            labels: ['Travel', 'Food', 'Others']
+            labels: ['Travel', 'Food', 'Misc.']
         };
 
         // Configuration options
