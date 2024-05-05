@@ -99,7 +99,7 @@ router.post('/login', async (req, res) => {
     newUser.save()
         .then(settings => {
             console.log("Registration successful; redirected to dashboard.html");
-            res.redirect("/pages/dashboard.html"); // TODO: figure out if we need userID in param here
+            res.redirect(`/pages/dashboard.html?userID=${userID}`); // TODO: figure out if we need userID in param here
             return;
         })
         .catch(err => {

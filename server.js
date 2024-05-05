@@ -31,6 +31,7 @@ const bills = require('./src/routes/bills.js');
 app.use('/user', user);
 app.use('/settings', settings);
 app.use('/bills', bills);
+app.use('/api/mongoDB/bills', bills); // used in dashboard.js
 
 const bank = require('./src/routes/bank.js');
 app.use('/bank', bank);

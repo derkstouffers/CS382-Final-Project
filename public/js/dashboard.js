@@ -62,3 +62,26 @@ fetch(`/api/mongoDB/transaction?userID=${userID}`).then(response => {
     .catch(error => {
         console.error('API call to mongo failed. Check fetch');
     })
+
+// fetch for the bills
+document.addEventListener('DOMContentLoaded', async() => {
+    try{
+        const billList = document.getElementById('bill-list');
+        billList.innerHTML = ''; // clear out everything so there's no duplicates
+        
+        const response = await fetch('/api/mongoDB/bills');
+        const fetchedBills = await response.json();
+
+        // since bills is essentially a 2D array
+        fetchedBills.forEach(userBill => {
+            userBill.bills.forEach(bill => {
+                const listElement = document.createElement('li');
+                listElement.textContent = bill.name;
+                billList.appendChild(listElement);
+            });
+        });
+
+    }catch (error){
+        console.error("Error getting bills. Triggered from dashboard.js. \n\t===> ", error);
+    }
+});
