@@ -1,0 +1,79 @@
+@import url('styles.css');
+
+/* Grabbed from https://w3schools.com/howto/howto_css_calendar.asp */
+ul {
+    list-style-type: none;
+}
+
+/* Month header */
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  /* from https://cssgradient.io/ */
+  background: var(--accent-color);
+  background: linear-gradient(45deg, var(--accent-color) 20%, #009E60 75%, #157F1F 100%);
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: var(--light-color);
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color:var(--light-color);
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: var(--dark-color);
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: var(--light-color);
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+  padding: 5px;
+  background: var(--accent-color);
+  color: var(--light-color) !important
+}
