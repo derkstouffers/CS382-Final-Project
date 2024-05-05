@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
         
         await userBills.save();
         console.log("Bills saved successfully");
-        res.redirect("/pages/dashboard.html?message=saveSuccess");
+        res.redirect(`/pages/dashboard.html?userID=${userID}&message=saveSuccess`);
         return;
     }
 

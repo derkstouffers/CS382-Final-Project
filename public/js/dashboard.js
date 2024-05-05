@@ -1,9 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
 const userID = urlParams.get('userID');
 
-let travel = 50;
-let food = 100;
-let etc = 30;
+let travel = 0;
+let food = 0;
+let etc = 0;
 
 // access the data from mongo. 
 // make sure this always matches with routes/transactions.js GET
