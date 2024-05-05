@@ -21,9 +21,6 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body.user;
 
     const foundUser = await user.findOne({email});
-    
-    global.userID = foundUser._id.toString();
-    const userID = global.userID;
 
     // check if the user exists
     if (!foundUser) {
@@ -31,6 +28,10 @@ router.post('/login', async (req, res) => {
         res.redirect("/pages/login.html?error=userNotFound");
         return;
     }
+
+    // we found a user here, so save the userID 
+    global.userID = foundUser._id.toString();
+    const userID = global.userID;
 
     // Check if password is valid
     if (foundUser.validPass(password)) {

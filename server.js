@@ -38,6 +38,25 @@ app.use('/bank', bank);
 const transactionsRoute = require('./src/routes/transaction.js');
 app.use('/api/mongoDB/transaction', transactionsRoute); // DO NOT CHANGE THIS ROUTE - PERIOD.
 
+// this route is to handle the dashboard calls
+// need to always show the chart
+require('./src/routes/user.js'); // contains the userID
+
+app.get('/dashboard.html', (req, res) => {
+    try{
+        console.log("global: ", global.userID);
+        console.log("Redirecting to user specific dashboard...");
+        const redirectURL = `/pages/dashboard.html?userID=${global.userID}`;
+        res.redirect(redirectURL); 
+        console.log("... done redirecting.");
+
+    }catch (error){
+        console.error('error redirecting to dashboard');
+        res.status(500).json({message : 'Server Error'});
+    }
+});
+
+
 // localhost:3000
 server.listen(PORT, () => {
     console.log('server running at localhost:' + PORT);
